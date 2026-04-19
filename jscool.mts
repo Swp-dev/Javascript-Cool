@@ -437,7 +437,6 @@ function transformAST(
       }
     },
 
-    // Control flow flattening on function bodies
     FunctionDeclaration(nodePath: any) {
       const body = nodePath.node.body.body as t.Statement[];
       if (body.length >= 3 && canFlattenFunctionBody(body)) {
@@ -478,7 +477,6 @@ async function obfuscate(
     addJunk: boolean;
   }
 ): Promise<string> {
-  // Pass 1: Collect strings
   const dummyState: StringArrayState = {
     arrName: "_dummy",
     decoderName: "_dummyDec",
