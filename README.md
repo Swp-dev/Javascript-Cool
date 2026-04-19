@@ -1,0 +1,2 @@
+# javascript-cool
+javascript obfuscator
