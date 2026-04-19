@@ -30,7 +30,7 @@ function printBanner() {
 ██   ██║╚════██║██║     ██║   ██║██║   ██║██║     
 ╚█████╔╝███████║╚██████╗╚██████╔╝╚██████╔╝███████╗
  ╚════╝ ╚══════╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝
-${RESET}${YELLOW}   JavaScript Obfuscator — King KTN${RESET}
+${RESET}${YELLOW}   JavaScript Obfuscator — King KTN ${RESET}
 ${DIM}   Anti-Hook | Anti-Debug | Anti-Proxy | AST Transform${RESET}
 ${DIM}   ─────────────────────────────────────────────────${RESET}`
   );
