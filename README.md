@@ -103,8 +103,8 @@ công cụ obfuscator javascript siêu mạnh 3636% bởi Trương Nhật Bảo 
 
 * Mã hóa chuỗi (RC4 + Base64)
 * Đổi tên biến bằng Unicode
-* Làm phẳng control flow
-* Chống debug & proxy
+* control flow
+* Anti-Debug, Anti-Hooking & proxy
 * Có thể thêm junk/dead code
 * ...
 
