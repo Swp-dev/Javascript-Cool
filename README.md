@@ -28,6 +28,7 @@ It applies multiple layers of transformation and runtime protection to make reve
 * Control flow flattening
 * Anti-debug & anti-proxy protections
 * Optional junk/dead code injection
+* ...
 
 ---
 
