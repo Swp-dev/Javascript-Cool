@@ -10,7 +10,7 @@ Advanced JavaScript Obfuscator for protecting source code.
 
 <p align="center">
 
-![stars](https://img.shields.io/github/stars/Swp-dev/JavascriptArmor?logo=github)
+![stars](https://img.shields.io/github/stars/Swp-dev/Javascript-Cool?logo=github)
 </p>
 
 
