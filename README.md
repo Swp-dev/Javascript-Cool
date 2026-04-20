@@ -1,3 +1,19 @@
+<p align="center">
+<img src="docs/jsarmorbanner.jpg" width="400">
+</p>
+
+<h1 align="center">Javascript Cool</h1>
+
+<p align="center">
+Advanced JavaScript Obfuscator for protecting source code.
+</p>
+
+<p align="center">
+
+![stars](https://img.shields.io/github/stars/Swp-dev/JavascriptArmor?logo=github)
+</p>
+
+
 🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 2.0
 
 > Secure your code. Obfuscate with precision.
