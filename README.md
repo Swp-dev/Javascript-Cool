@@ -48,7 +48,7 @@ It applies multiple layers of transformation and runtime protection to make reve
 
 ---
 
-## Installation
+## Installation (optional)
 
 ```bash
 npm install -g tsx
@@ -127,7 +127,7 @@ công cụ obfuscator javascript siêu mạnh 3636% bởi Trương Nhật Bảo 
 
 ---
 
-## Cài đặt
+## Cài đặt (optional)
 
 ```bash
 npm install -g tsx
