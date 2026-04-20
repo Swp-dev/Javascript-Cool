@@ -50,8 +50,9 @@ Then follow CLI prompts:
 
 ```text
 Enter input JS file path: example.js
-Add Anti-Hooking? [Y/N]
-Add Junk Code? [Y/N]
+Add Anti-Hooking (native function integrity check)? [Y/N]:
+Add Junk / Dead Code injection? [Y/N]:
+Add Control Flow Flattening (switch / route obfuscation)? [Y/N]: 
 ```
 
 ---
@@ -59,7 +60,7 @@ Add Junk Code? [Y/N]
 ## Output
 
 ```
-obf.js
+example.obf.js
 ```
 
 ---
