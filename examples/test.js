@@ -4,4 +4,4 @@ function greetUser(name) {
   return message;
 }
 
-greetUser("World"
+greetUser("World");
