@@ -1,5 +1,5 @@
 <p align="center">
-<img src="examples/javascript-cool.png" width="400">
+<img src="examples/jscool.jpg" width="400">
 </p>
 
 <h1 align="center">Javascript Cool</h1>
