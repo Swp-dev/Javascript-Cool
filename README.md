@@ -1,4 +1,4 @@
-🔐 JScool — High/Extreme JavaScript Obfuscator
+🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 2.0
 
 > Secure your code. Obfuscate with precision.
 
@@ -159,7 +159,7 @@ obf.js
 
 ⭐ **150 Stars** → Ra mắt:
 
-* JScool v2 (bảo mật nâng cao)
+* JScool v3 (bảo mật nâng cao)
 * Phiên bản Python Obfuscator >.<
 
 ---
