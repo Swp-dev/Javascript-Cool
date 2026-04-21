@@ -5,7 +5,7 @@
 <h1 align="center">Javascript Cool</h1>
 
 <p align="center">
-Advanced JavaScript Obfuscator for protecting source code (open source).
+Advanced JavaScript Obfuscator for protecting source code (Open-Source).
 </p>
 
 <p align="center">
