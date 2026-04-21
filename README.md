@@ -20,7 +20,7 @@ Advanced JavaScript Obfuscator for protecting source code.
 
 ---
 
-## 🌐 Select your language / Chọn ngôn ngữv
+## 🌐 Select your language / Chọn ngôn ngữ
 
 * 🇬🇧 [English](#-english)
 * 🇻🇳 [Tiếng Việt](#-tiếng-việt)
