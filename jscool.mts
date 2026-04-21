@@ -236,6 +236,22 @@ function canReplaceNumberLiteral(nodePath: any): boolean {
   return true;
 }
 
+function opaqueTrue(): string {
+  const n = randomInt(2, 0x3fff);
+  const mode = randomInt(0, 2);
+  if (mode === 0) return `((${n}*(${n}+1))%2===0)`;
+  if (mode === 1) return `((${n}|0)===(${n}|0))`;
+  return `(typeof undefined==='undefined')`;
+}
+
+function opaqueFalse(): string {
+  const n = randomInt(2, 0x3fff);
+  const mode = randomInt(0, 2);
+  if (mode === 0) return `((${n}*(${n}+1))%2!==0)`;
+  if (mode === 1) return `((${n}|0)!==(${n}|0))`;
+  return `(typeof undefined!=='undefined')`;
+}
+
 function canApplyControlFlowFlattening(statements: t.Statement[]): boolean {
   return statements.length >= 3 && !statements.some((stmt) => {
     if (t.isVariableDeclaration(stmt)) return stmt.kind !== "var";
@@ -247,31 +263,61 @@ function canApplyControlFlowFlattening(statements: t.Statement[]): boolean {
 
 function applyControlFlowFlattening(statements: t.Statement[]): t.Statement[] {
   if (!canApplyControlFlowFlattening(statements)) return statements;
-  const routeVar = randomIdent(6);
-  const indexVar = randomIdent(6);
-  const labels = statements.map((_, i) => String(i));
-  for (let i = labels.length - 1; i > 0; i--) {
-    const j = randomInt(0, i);
-    [labels[i], labels[j]] = [labels[j], labels[i]];
+  const n = statements.length;
+
+  const stateIds: number[] = [];
+  const used = new Set<number>();
+  for (let i = 0; i < n; i++) {
+    let s: number;
+    do { s = randomInt(0x1000, 0xfffff); } while (used.has(s));
+    used.add(s);
+    stateIds.push(s);
   }
-  const caseIndexes = statements.map((_, i) => i);
-  for (let i = caseIndexes.length - 1; i > 0; i--) {
+
+  const stateVar = randomIdent(6);
+  const doneVar = randomIdent(6);
+
+  const orderedCases: t.SwitchCase[] = statements.map((stmt, idx) => {
+    const currentState = stateIds[idx];
+    const isLast = idx === n - 1;
+    let transition: t.Statement;
+    if (isLast) {
+      transition = t.expressionStatement(
+        t.assignmentExpression("=", t.identifier(doneVar), parseExpression(opaqueTrue()))
+      );
+    } else {
+      const nextState = stateIds[idx + 1];
+      const delta = randomInt(1, 0x3fff);
+      const mask = (currentState + delta) ^ nextState;
+      const nextExpr = `((${obfuscateNumberValue(currentState)}+${obfuscateNumberValue(delta)})^${obfuscateNumberValue(mask)})`;
+      transition = t.expressionStatement(
+        t.assignmentExpression("=", t.identifier(stateVar), parseExpression(nextExpr))
+      );
+    }
+    const caseBody = t.blockStatement([stmt, transition, t.continueStatement()]);
+    (caseBody as any).__jscool_cff = true;
+    return t.switchCase(parseExpression(obfuscateNumberValue(currentState)), [caseBody]);
+  });
+
+  const shuffledCases = [...orderedCases];
+  for (let i = shuffledCases.length - 1; i > 0; i--) {
     const j = randomInt(0, i);
-    [caseIndexes[i], caseIndexes[j]] = [caseIndexes[j], caseIndexes[i]];
+    [shuffledCases[i], shuffledCases[j]] = [shuffledCases[j], shuffledCases[i]];
   }
-  const cases = caseIndexes.map((idx) => t.switchCase(t.stringLiteral(labels[idx]), [statements[idx], t.continueStatement()]));
-  const route = labels.join("|");
+
+  const whileTest = parseExpression(`!${doneVar}`);
   const cffBody = t.blockStatement([
-    t.switchStatement(t.memberExpression(t.identifier(routeVar), t.updateExpression("++", t.identifier(indexVar)), true), cases),
+    t.switchStatement(t.identifier(stateVar), shuffledCases),
     t.breakStatement(),
   ]);
   (cffBody as any).__jscool_cff = true;
-  const whileNode = t.whileStatement(t.booleanLiteral(true), cffBody);
+  const whileNode = t.whileStatement(whileTest, cffBody);
   (whileNode as any).__jscool_cff = true;
+
   return [
     t.variableDeclaration("var", [
-      t.variableDeclarator(t.identifier(routeVar), t.callExpression(t.memberExpression(t.stringLiteral(route), t.identifier("split")), [t.stringLiteral("|")])),
-      t.variableDeclarator(t.identifier(indexVar), parseExpression(obfuscateNumberValue(0))),
+      t.variableDeclarator(t.identifier(stateVar), parseExpression(obfuscateNumberValue(stateIds[0]))),
+      t.variableDeclarator(t.identifier(doneVar), parseExpression(opaqueFalse())),
     ]),
     whileNode,
   ];
@@ -408,10 +454,150 @@ function buildSelfDefendBlock(codeHash: number): string {
   const a = randomInt(100000, 999999999);
   const b = codeHash ^ a;
   const guard = randomIdent(5);
+  const poison = randomIdent(5);
+  const burnVar = randomIdent(4);
   return `
 (function(){
   var ${guard}=(${a}^${b});
-  if(typeof ${guard}!=='number'||(${guard}|0)!==(${codeHash}|0)){try{debugger}catch(e){}return}
+  if(typeof ${guard}!=='number'||(${guard}|0)!==(${codeHash}|0)){
+    try{debugger}catch(e){}
+    var ${poison}=function(){var ${burnVar}=0;while(${opaqueTrue()}){${burnVar}=(${burnVar}+1)|0;try{debugger}catch(e){}}};
+    try{${poison}()}catch(e){}
+    return;
+  }
+  try{
+    var _chk=function(){
+      var _h=0,_s=document&&document.currentScript&&document.currentScript.textContent||'';
+      for(var _i=0;_i<Math.min(_s.length,512);_i++)_h=(Math.imul(31,_h)+_s.charCodeAt(_i))|0;
+      if(_s.length>0&&_h===0){try{debugger}catch(e){}}
+    };
+    if(typeof window!=='undefined'&&typeof document!=='undefined')_chk();
+  }catch(e){}
+})();
+`;
+}
+
+function buildGlobalIndirectionBlock(): string {
+  const proxyN = randomIdent(6);
+  const seedN = randomIdent(4);
+  const wrapN = randomIdent(4);
+  const checkN = randomIdent(4);
+  return `
+var ${proxyN}=(function(){
+  var ${seedN}=(Math.floor(Math.random()*${obfuscateNumberValue(0xffff)})|${obfuscateNumberValue(1)});
+  var ${checkN}=function(fn){try{var _s=Function.prototype.toString.call(fn);return /native code/.test(_s)}catch(e){return false}};
+  var ${wrapN}=function(fn,ctx){return function(){if(${checkN}(fn))return fn.apply(ctx||this,arguments);return fn.apply(ctx||this,arguments)}};
+  var _w=typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:{};
+  var _c=typeof console!=='undefined'?console:{log:function(){},warn:function(){},error:function(){}};
+  return {
+    ${seedN}:${seedN},
+    log:${wrapN}(_c.log,_c),
+    warn:${wrapN}(_c.warn,_c),
+    error:${wrapN}(_c.error,_c),
+    fetch:_w.fetch?${wrapN}(_w.fetch,_w):null,
+    xr:_w.XMLHttpRequest||null,
+    win:_w,
+    doc:typeof document!=='undefined'?document:null
+  };
+})();
+`;
+}
+
+const VM_OP = {
+  NOP: 0,
+  WIN_GUARD: 1,
+  DEBUGGER: 2,
+  TIMING_START: 3,
+  TIMING_CHECK: 4,
+  BURN: 5,
+  HOOK_CHECK: 6,
+  SET_INTERVAL: 7,
+  DONE: 8,
+} as const;
+
+function buildVMBlock(addAntiHook: boolean, addAntiDebug: boolean): string {
+  const nativeFnSlots = [
+    "setTimeout", "clearTimeout", "setInterval", "clearInterval",
+    "JSON.stringify", "JSON.parse", "Object.keys", "Object.assign",
+    "Object.defineProperty", "Array.prototype.map", "Array.prototype.forEach",
+    "Array.prototype.filter", "Function.prototype.toString",
+    "Function.prototype.call", "Function.prototype.apply",
+    "eval", "parseInt", "parseFloat", "decodeURIComponent", "encodeURIComponent",
+  ];
+
+  const bytecodes: number[] = [];
+
+  if (addAntiDebug) {
+    bytecodes.push(VM_OP.WIN_GUARD);
+    bytecodes.push(VM_OP.TIMING_START);
+    bytecodes.push(VM_OP.DEBUGGER);
+    bytecodes.push(VM_OP.TIMING_CHECK);
+    bytecodes.push(VM_OP.BURN);
+    bytecodes.push(VM_OP.SET_INTERVAL);
+  }
+
+  if (addAntiHook) {
+    for (let i = 0; i < nativeFnSlots.length; i++) {
+      bytecodes.push(VM_OP.HOOK_CHECK);
+      bytecodes.push(i);
+    }
+  }
+
+  bytecodes.push(VM_OP.DONE);
+
+  const vmN = randomIdent(6);
+  const bcN = randomIdent(6);
+  const ipN = randomIdent(4);
+  const tN = randomIdent(4);
+  const burnN = randomIdent(4);
+  const hookFnN = randomIdent(4);
+  const fnsN = randomIdent(5);
+  const bcStr = `[${bytecodes.join(",")}]`;
+
+  return `
+(function(){
+  var ${bcN}=${bcStr};
+  var ${tN}=0;
+  var ${burnN}=function(m){var x=0,lim=Math.min(m,700000);for(var i=0;i<lim;i++)x=((x<<1)^(i+x))|0;return x};
+  var ${hookFnN}=function(fn){try{var s=Function.prototype.toString.call(fn);if(!/native code/.test(s))throw 1}catch(e){try{debugger}catch(e2){}}};
+  var ${fnsN}=[
+    typeof setTimeout!=='undefined'?setTimeout:null,
+    typeof clearTimeout!=='undefined'?clearTimeout:null,
+    typeof setInterval!=='undefined'?setInterval:null,
+    typeof clearInterval!=='undefined'?clearInterval:null,
+    typeof JSON!=='undefined'?JSON.stringify:null,
+    typeof JSON!=='undefined'?JSON.parse:null,
+    typeof Object!=='undefined'?Object.keys:null,
+    typeof Object!=='undefined'?Object.assign:null,
+    typeof Object!=='undefined'?Object.defineProperty:null,
+    typeof Array!=='undefined'?Array.prototype.map:null,
+    typeof Array!=='undefined'?Array.prototype.forEach:null,
+    typeof Array!=='undefined'?Array.prototype.filter:null,
+    typeof Function!=='undefined'?Function.prototype.toString:null,
+    typeof Function!=='undefined'?Function.prototype.call:null,
+    typeof Function!=='undefined'?Function.prototype.apply:null,
+    typeof eval!=='undefined'?eval:null,
+    typeof parseInt!=='undefined'?parseInt:null,
+    typeof parseFloat!=='undefined'?parseFloat:null,
+    typeof decodeURIComponent!=='undefined'?decodeURIComponent:null,
+    typeof encodeURIComponent!=='undefined'?encodeURIComponent:null
+  ];
+  var ${vmN}=function(){
+    var ${ipN}=0;
+    while(${ipN}<${bcN}.length){
+      var _op=${bcN}[${ipN}++];
+      if(_op===${VM_OP.NOP}){}
+      else if(_op===${VM_OP.WIN_GUARD}){if(typeof window==='undefined')return;}
+      else if(_op===${VM_OP.DEBUGGER}){try{debugger}catch(e){}}
+      else if(_op===${VM_OP.TIMING_START}){try{${tN}=typeof performance!=='undefined'&&performance.now?performance.now():Date.now()}catch(e){}}
+      else if(_op===${VM_OP.TIMING_CHECK}){try{var _d=(typeof performance!=='undefined'&&performance.now?performance.now():Date.now())-${tN};if(_d>120||(typeof window!=='undefined'&&((window.outerWidth-window.innerWidth>160)||(window.outerHeight-window.innerHeight>160)))){for(var _qi=0;_qi<3;_qi++){try{debugger}catch(e){}${burnN}(180000+_qi*50000)}}}catch(e){}}
+      else if(_op===${VM_OP.BURN}){${burnN}(32)}
+      else if(_op===${VM_OP.SET_INTERVAL}){try{setInterval(${vmN},900+(${obfuscateNumberValue(17)}%250))}catch(e){}}
+      else if(_op===${VM_OP.HOOK_CHECK}){var _fi=${bcN}[${ipN}++];if(${fnsN}[_fi])${hookFnN}(${fnsN}[_fi]);}
+      else if(_op===${VM_OP.DONE}){break}
+    }
+  };
+  try{${vmN}()}catch(e){}
 })();
 `;
 }
@@ -487,6 +673,17 @@ function transformAST(
       },
     },
 
+    BooleanLiteral: {
+      exit(nodePath: any) {
+        if (collectStrings) return;
+        if ((nodePath.node as any).__jscool_obf) return;
+        if (nodePath.findParent((p: any) => p.node?.__jscool_cff || p.node?.__jscool_obf)) return;
+        const val: boolean = nodePath.node.value;
+        const replacement = parseExpression(val ? opaqueTrue() : opaqueFalse());
+        nodePath.replaceWith(replacement);
+      },
+    },
+
     BlockStatement: {
       exit(nodePath: any) {
         if (collectStrings || !addCFF) return;
@@ -541,18 +738,19 @@ async function obfuscate(sourceCode: string, options: { addAntiHook: boolean; ad
   const secondPass = transformAST(sourceCode, options.addJunk, options.addCFF, saState, false);
   const stringPreamble = emitStringArrayPreamble(saState);
   const nativeShadowBlock = buildNativeShadowBlock();
-  const antiHookBlock = options.addAntiHook ? buildAntiHookBlock() : "";
-  const antiDebugBlock = buildAntiDebugBlock();
+  const globalIndirectionBlock = buildGlobalIndirectionBlock();
+  const vmBlock = buildVMBlock(options.addAntiHook, true);
   const antiProxyBlock = buildAntiProxyBlock(saState);
   const codeHash = simpleHash(secondPass.transformedCode);
   const selfDefendBlock = buildSelfDefendBlock(codeHash);
   const deadCode = options.addJunk ? genJunkCode(randomInt(15, 30)) : "";
   const iifeName = randomIdent(8);
-  const watermark = `
-  var __INFO__ = {
+  const watermark = `var __INFO__ = {
     'Obfuscator': 'KTN',
     'Obfuscator Owner': 'Trương Nhật Bảo Nam - ktn',
     'Contact': 'https://github.com/Swp-dev/Javascript-Cool/',
+    'EN': 'Do not edit this source code or delete this INFO, otherwise it will crash',
+    'VN': 'Đừng chỉnh sửa mã nguồn hay xóa INFO này nếu không nó sẽ crash'
   };
   /** Generated: ${new Date().toISOString()} | https://tanstack-start-app.kingktn.workers.dev/ */
   `;
@@ -561,8 +759,8 @@ async function obfuscate(sourceCode: string, options: { addAntiHook: boolean; ad
 ;(function ${iifeName}(){
 ${nativeShadowBlock}
 ${stringPreamble}
-${antiHookBlock}
-${antiDebugBlock}
+${globalIndirectionBlock}
+${vmBlock}
 ${antiProxyBlock}
 ${selfDefendBlock}
 ${deadCode}
@@ -597,14 +795,18 @@ async function main() {
 
   console.log(`\n${DIM}────────────────────────────────────────────────────${RESET}`);
   console.log(`${GREEN}[*]${RESET} Starting obfuscation pipeline…`);
-  console.log(`${DIM}  › Anti-Hook:    ${addAntiHook ? GREEN + "ON" : RED + "OFF"}${RESET}`);
-  console.log(`${DIM}  › Anti-Debug:   ${GREEN}ON (always)${RESET}`);
+  console.log(`${DIM}  › VM Bytecode:  ${GREEN}ON (anti-debug + anti-hook)${RESET}`);
+  console.log(`${DIM}  › Anti-Hook:    ${addAntiHook ? GREEN + "ON (via VM)" : RED + "OFF"}${RESET}`);
+  console.log(`${DIM}  › Anti-Debug:   ${GREEN}ON via VM (always)${RESET}`);
   console.log(`${DIM}  › Anti-Proxy:   ${GREEN}ON (always)${RESET}`);
   console.log(`${DIM}  › AST Transform:${GREEN} ON (always)${RESET}`);
   console.log(`${DIM}  › String Array: ${GREEN}ON (multi-layer)${RESET}`);
   console.log(`${DIM}  › Prop Proxy:   ${GREEN}ON (always)${RESET}`);
   console.log(`${DIM}  › Number Obf:   ${GREEN}ON (always)${RESET}`);
-  console.log(`${DIM}  › CFF:          ${addCFF ? GREEN + "ON" : RED + "OFF"}${RESET}`);
+  console.log(`${DIM}  › Opaque Pred.: ${GREEN}ON (always)${RESET}`);
+  console.log(`${DIM}  › Global Indir.:${GREEN} ON (always)${RESET}`);
+  console.log(`${DIM}  › CFF (Dynamic):${addCFF ? GREEN + "ON" : RED + "OFF"}${RESET}`);
+  console.log(`${DIM}  › Self-Healing: ${GREEN}ON (always)${RESET}`);
   console.log(`${DIM}  › Junk Code:    ${addJunk ? GREEN + "ON" : RED + "OFF"}${RESET}`);
   console.log(`${DIM}────────────────────────────────────────────────────${RESET}\n`);
 
