@@ -14,7 +14,7 @@ Advanced JavaScript Obfuscator for protecting source code.
 </p>
 
 
-🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 2.0
+🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 3.0
 
 > Secure your code. Obfuscate with precision.
 
