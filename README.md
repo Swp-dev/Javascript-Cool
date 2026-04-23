@@ -127,7 +127,7 @@ công cụ obfuscator javascript siêu mạnh 3636% bởi Trương Nhật Bảo 
 
 ---
 
-## Cài đặt (optional)
+## Cài đặt (không bắt buộc)
 
 ```bash
 npm install -g tsx
