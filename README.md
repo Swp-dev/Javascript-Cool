@@ -14,7 +14,7 @@ Advanced JavaScript Obfuscator for protecting source code (Open-Source).
 </p>
 
 
-🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 3.0
+🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 4.0
 
 > Secure your code. Obfuscate with precision.
 
@@ -40,9 +40,13 @@ It applies multiple layers of transformation and runtime protection to make reve
 ## Features
 
 * String encryption (RC4 + Base64)
+* AST Transformation
 * Identifier renaming (Unicode-based)
 * Control flow flattening
-* Anti-debug & anti-proxy protections
+* VM Protection
+* Anti-Proxy / Network Detection
+* Anti-Hook / Anti-Tamper / Anti -Debug
+* Self-Defending / Integrity Check
 * Optional junk/dead code injection
 * ...
 
@@ -116,13 +120,15 @@ This tool is intended for **legitimate code protection purposes only**.
 công cụ obfuscator javascript siêu mạnh 3636% bởi Trương Nhật Bảo Nam (ktn)
 ---
 
-## Tính năng
-
-* Mã hóa chuỗi (RC4 + Base64)
-* Đổi tên biến bằng Unicode
-* control flow
-* Anti-Debug, Anti-Hooking & proxy
-* Có thể thêm junk/dead code
+* String encryption (RC4 + Base64)
+* AST Transformation
+* Identifier renaming (Unicode-based)
+* Control flow flattening
+* VM Protection
+* Anti-Proxy / Network Detection
+* Anti-Hook / Anti-Tamper / Anti -Debug
+* Self-Defending / Integrity Check
+* Optional junk/dead code injection
 * ...
 
 ---
