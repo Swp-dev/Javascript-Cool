@@ -63,7 +63,7 @@ npm install -g tsx
 ## Usage
 
 ```bash
-tsx jscoolv2.mts
+tsx jscoolv4.mts
 ```
 
 Then follow CLI prompts:
@@ -144,7 +144,7 @@ npm install -g tsx
 ## Cách dùng
 
 ```bash
-tsx jscoolv2.mts
+tsx jscoolv4.mts
 ```
 
 Sau đó nhập:
