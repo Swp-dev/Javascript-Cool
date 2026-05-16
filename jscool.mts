@@ -1054,12 +1054,20 @@ function transformAST(
 }
 
 async function obfuscate(sourceCode: string, options: { addAntiHook: boolean; addJunk: boolean; addCFF: boolean }): Promise<string> {
+  let shebang = "";
+  let codeToProcess = sourceCode;
+  const shebangMatch = sourceCode.match(/^(#![^\r\n]*(?:\r\n|\r|\n)?)/);
+  if (shebangMatch) {
+    shebang = shebangMatch[1];
+    codeToProcess = sourceCode.slice(shebang.length);
+  }
+
   const dummyState: StringArrayState = { arrName: "_dummy", decoderName: "_dummyDec", strings: [], indexMap: new Map(), rotateBy: 0 };
-  const firstPass = transformAST(sourceCode, false, false, dummyState, true);
+  const firstPass = transformAST(codeToProcess, false, false, dummyState, true);
   const runtimeStrings = ["https://www.google.com/favicon.ico", "no-cors", "no-store", "load", "x-httptoolkit-injected"];
   const uniqueStrings = [...new Set([...firstPass.collectedStrings, ...runtimeStrings])].filter((s) => s.length > 0);
   const saState = buildStringArray(uniqueStrings);
-  const secondPass = transformAST(sourceCode, options.addJunk, options.addCFF, saState, false);
+  const secondPass = transformAST(codeToProcess, options.addJunk, options.addCFF, saState, false);
   const hoistedImports = secondPass.hoistedImports;
   const stringPreamble = emitStringArrayPreamble(saState);
 
@@ -1083,7 +1091,7 @@ ${selfDefendBlock}
 ${deadCode}
 ${secondPass.transformedCode}
 })();`;
-  return `${watermark}
+  return `${shebang}${watermark}
 ${iifePart}`;
 }
 
