@@ -14,7 +14,7 @@ Advanced JavaScript Obfuscator for protecting source code (Open-Source).
 </p>
 
 
-🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 4.0
+🔐 JScool — High/Extreme JavaScript Obfuscator Vesion 5.0
 
 > Secure your code. Obfuscate with precision.
 
@@ -63,7 +63,7 @@ npm install -g tsx
 ## Usage
 
 ```bash
-tsx jscoolv4.mts
+tsx jscool.mts
 ```
 
 Then follow CLI prompts:
@@ -144,7 +144,7 @@ npm install -g tsx
 ## Cách dùng
 
 ```bash
-tsx jscoolv4.mts
+tsx jscool.mts
 ```
 
 Sau đó nhập:
