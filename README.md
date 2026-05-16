@@ -213,17 +213,17 @@ Code After
     'Obfuscator Owner': 'Trương Nhật Bảo Nam - ktn',
     'Contact': 'https://github.com/Swp-dev/Javascript-Cool/'
   };
-  /** Generated: 2026-05-02T12:25:35.431Z | https://tanstack-start-app.kingktn.workers.dev/ */
+  /** Generated: 2026-05-16T05:28:03.333Z | https://tanstack-start-app.kingktn.workers.dev/ */
   
-;(async function _ィこ7fあ28홽(){
+;(async function _い尧dc0418(){
 
-var _蔾45骥7ポポむ=[[0,"19a4a2898f1168a",("==Q+"+"KDRJ"+"iP09")],[0,"2c10fb89a457a425","==gl"],[1,"313343e8e333e99b","f5FV"],[0,"663fea7a275f6c576",("=Qmo"+"xHbk")],[1,"e9e16d8626",("==QWR0UFFhQGXMRQGtkXKkVV"+"a1lSV5FCWMwVE91WLg1HMolC")],[0,"80dd8a21cd550",("==gc"+"gmR+"+"TkZS")],[0,"9c2873f33fa2aa2",("=wVWme"+"qlx9aD")],[0,"d81b4efe336291ed9",("==g"+"oAl"+"wM")],[2,"56601614628cda",("UHUHX1V+Y0NSdQEVBiZBRl"+"JzAEZTWUZeYVA2DW93Cw0=")]],_켔f2d邈e={};
-(function(arr,n){if(!n)return;var x=function(){return arr.push(arr.shift())};while(n-- >0)x()})(_蔾45骥7ポポむ,5);
-function _擐fbf70쑺c(i){
-  var _쐥aピ탑4=5;
-  var _len=_蔾45骥7ポポむ.length;
-  var _i=((((i|0)-_쐥aピ탑4)%_len)+_len)%_len;
-  if(_켔f2d邈e[_i])return _켔f2d邈e[_i];
+var _뉃d76ゖヵイ2=[[1,"a6a9c9ea7bd8dd9",("==QLc9"+"QVOoRQ")],[1,"f3726847719b2a0","==wR"],[2,"331e5194d61f78",("UXQ"+"ICw"+"==")],[0,"98b8239a3b32",("=oeE"+"HLdC")],[2,"3270c38a6",("UnplAAB7dVd6SgsEVFBQTT"+"sECkRtAhtfdAx4RVBkCQ5q"+"YDtGagAORS9eVAtURA8K")],[2,"9ff188bcd7dcbb7947",("WwteRW"+"EKWxoH"+"QFle")],[3,"d0d13573dca8",("dEXdcr"+"kps+g=")],[1,"0cf419614e204de9",("==AW"+"JIAV")],[2,"ec4ca6c0941",("ACAFDAV+MUddcwg"+"TAXMXEVIgAUlWXB"+"UPbVAzWjlxBAk=")]],_べぱa1摌ヂ={};
+(function(arr,n){if(!n)return;var x=function(){return arr.push(arr.shift())};while(n-- >0)x()})(_뉃d76ゖヵイ2,7);
+function _婗4fが0炬0ホ(i){
+  var _펶쇿汞쯅8=7;
+  var _len=_뉃d76ゖヵイ2.length;
+  var _i=((((i|0)-_펶쇿汞쯅8)%_len)+_len)%_len;
+  if(_べぱa1摌ヂ[_i])return _べぱa1摌ヂ[_i];
   var _hasAtob=(typeof atob==='function');
   var _hasBuf=(typeof Buffer!=='undefined'&&Buffer&&typeof Buffer.from==='function');
   var _a=_hasAtob?atob:(_hasBuf?function(x){return Buffer.from(x,'base64').toString('binary')}:function(x){return x});
@@ -231,41 +231,41 @@ function _擐fbf70쑺c(i){
   var _r=function(x){return x.split('').reverse().join('')};
   var _x=function(d,k){var o='';for(var i=0;i<d.length;i++)o+=String.fromCharCode(d.charCodeAt(i)^k.charCodeAt(i%k.length));return o};
   var _q=function(k,d){var s=[],j=0,i,r='',x=0,y=0,t;for(i=0;i<256;i++)s[i]=i;for(i=0;i<256;i++){j=(j+s[i]+k.charCodeAt(i%k.length))&255;t=s[i];s[i]=s[j];s[j]=t}for(i=0;i<d.length;i++){x=(x+1)&255;y=(y+s[x])&255;t=s[x];s[x]=s[y];s[y]=t;r+=String.fromCharCode(d.charCodeAt(i)^s[(s[x]+s[y])&255])}return r};
-  var _v=_蔾45骥7ポポむ[_i],_m=_v[0],_k=_v[1],_d=_v[2],_o='';
+  var _v=_뉃d76ゖヵイ2[_i],_m=_v[0],_k=_v[1],_d=_v[2],_o='';
   if(_m===0)_o=_u(_q(_k,_x(_a(_r(_d)),_r(_k))));
   else if(_m===1)_o=_r(_u(_x(_a(_r(_d)),_k)));
   else if(_m===2)_o=_u(_a(_x(_a(_d),_k)));
   else _o=_r(_u(_q(_k,_a(_d))));
-  return _켔f2d邈e[_i]=_o;
+  return _べぱa1摌ヂ[_i]=_o;
 }
 
 
 (function(){
-  var _쵠3e竴5ゥ=[91,169,123,111,136,75,118,174,106,66,62,16,65,0,65,4,65,8,65,12,65,15,69,4,5,6,207,7,8,240,219,72];
-  var _灐dc쑶=0,_ゕょd1=0,_觞샨3ぢ=0;
-  var _ミ懨俍f킃=null,_擇톙カ7깖=null;
-  var _北6홰ミ=typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:typeof self!=='undefined'?self:null;
-  var _ゔ品偢2=typeof console!=='undefined'?console:{log:function(){},warn:function(){},error:function(){}};
+  var _嬀78ebを=[209,109,103,168,9,76,74,118,228,190,244,163,35,0,35,4,35,8,35,12,35,15,154,4,5,6,85,7,8,234,82,247];
+  var _ねた2講=0,_か테4e=0,_묽48ぴ=0;
+  var _ざや9쬗6=null,_덫bb훗솿=null;
+  var _プの97=typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:typeof self!=='undefined'?self:null;
+  var _ぺチ쒪お=typeof console!=='undefined'?console:{log:function(){},warn:function(){},error:function(){}};
 
-  var _뭬9胡ぺ=(function(){try{var _ua=(typeof navigator!=='undefined'&&navigator.userAgent)||'';return /Mobi|Android|iPhone|iPad|iPod|Touch|Tablet/i.test(_ua)||(typeof navigator!=='undefined'&&(navigator.maxTouchPoints|0)>1)}catch(e){return false}})();
+  var _ペ을か짩=(function(){try{var _ua=(typeof navigator!=='undefined'&&navigator.userAgent)||'';return /Mobi|Android|iPhone|iPad|iPod|Touch|Tablet/i.test(_ua)||(typeof navigator!=='undefined'&&(navigator.maxTouchPoints|0)>1)}catch(e){return false}})();
 
-  var _턭둭ィ敒ゅ=(function(){try{return Function.prototype.toString}catch(e){return null}})();
-  var _敊f곢た=function(m){var lim=Math.min(m|0,100000);if(_뭬9胡ぺ)lim=Math.min(lim,8000);var x=0;for(var i=0;i<lim;i++)x=((x<<1)^(i+x))|0;return x};
-  var _碐c숇8=function(fn){
+  var _쏋カ0ク麝=(function(){try{return Function.prototype.toString}catch(e){return null}})();
+  var _ピ목b1=function(m){var lim=Math.min(m|0,100000);if(_ペ을か짩)lim=Math.min(lim,8000);var x=0;for(var i=0;i<lim;i++)x=((x<<1)^(i+x))|0;return x};
+  var _ヂ릪攈켢=function(fn){
     if(!fn)return;
     try{
 
       var s='';
-      if(_턭둭ィ敒ゅ){s=_턭둭ィ敒ゅ.call(fn)}else{s=Function.prototype.toString.call(fn)}
+      if(_쏋カ0ク麝){s=_쏋カ0ク麝.call(fn)}else{s=Function.prototype.toString.call(fn)}
       if(s.indexOf('[native code]')<0)throw 1;
 
       if(fn.toString&&fn.toString!==Function.prototype.toString&&typeof fn.toString==='function'){
-        var s2=_턭둭ィ敒ゅ?_턭둭ィ敒ゅ.call(fn.toString):Function.prototype.toString.call(fn.toString);
+        var s2=_쏋カ0ク麝?_쏋カ0ク麝.call(fn.toString):Function.prototype.toString.call(fn.toString);
         if(s2.indexOf('[native code]')<0)throw 2;
       }
     }catch(e){try{debugger}catch(e2){}}
   };
-  var _も7f9タ=[
+  var _緪골e낖튵=[
     typeof setTimeout!=='undefined'?setTimeout:null,
     typeof clearTimeout!=='undefined'?clearTimeout:null,
     typeof setInterval!=='undefined'?setInterval:null,
@@ -287,76 +287,76 @@ function _擐fbf70쑺c(i){
     typeof decodeURIComponent!=='undefined'?decodeURIComponent:null,
     typeof encodeURIComponent!=='undefined'?encodeURIComponent:null
   ];
-  var _き8a7り7=function(){
-    var _嫭87た=0;
-    while(_嫭87た<_쵠3e竴5ゥ.length){
-      var _op=_쵠3e竴5ゥ[_嫭87た++];
+  var _バcログ2あ=function(){
+    var _쓹醄ぅゴ=0;
+    while(_쓹醄ぅゴ<_嬀78ebを.length){
+      var _op=_嬀78ebを[_쓹醄ぅゴ++];
 
-      if(_op===59){}
-      else if(_op===123){if(_北6홰ミ===null||typeof window==='undefined')return;}
-      else if(_op===63){if(typeof document==='undefined')return;}
-      else if(_op===136){try{debugger}catch(e){}}
-      else if(_op===111){try{_灐dc쑶=typeof performance!=='undefined'&&performance.now?performance.now():Date.now()}catch(e){}}
-      else if(_op===75){
+      if(_op===75){}
+      else if(_op===103){if(_プの97===null||typeof window==='undefined')return;}
+      else if(_op===68){if(typeof document==='undefined')return;}
+      else if(_op===9){try{debugger}catch(e){}}
+      else if(_op===168){try{_ねた2講=typeof performance!=='undefined'&&performance.now?performance.now():Date.now()}catch(e){}}
+      else if(_op===76){
         try{
-          var _d=(typeof performance!=='undefined'&&performance.now?performance.now():Date.now())-_灐dc쑶;
-          if(_d>(_뭬9胡ぺ?500:120)){for(var _qi=0;_qi<3;_qi++){try{debugger}catch(e){}_敊f곢た(_뭬9胡ぺ?6000:60000+_qi*30000)}}
+          var _d=(typeof performance!=='undefined'&&performance.now?performance.now():Date.now())-_ねた2講;
+          if(_d>(_ペ을か짩?500:120)){for(var _qi=0;_qi<3;_qi++){try{debugger}catch(e){}_ピ목b1(_ペ을か짩?6000:60000+_qi*30000)}}
         }catch(e){}
       }
-      else if(_op===118){_敊f곢た(32)}
-      else if(_op===66){try{_敊f곢た(_뭬9胡ぺ?((Math.random()*256)|0):((Math.random()*2048)|0)+256)}catch(e){}}
-      else if(_op===174){
+      else if(_op===74){_ピ목b1(32)}
+      else if(_op===190){try{_ピ목b1(_ペ을か짩?((Math.random()*256)|0):((Math.random()*2048)|0)+256)}catch(e){}}
+      else if(_op===118){
         try{
-          if(_北6홰ミ&&((_北6홰ミ.outerWidth-_北6홰ミ.innerWidth)>160||(_北6홰ミ.outerHeight-_北6홰ミ.innerHeight)>160)){
-            for(var _ci=0;_ci<2;_ci++){try{debugger}catch(e){}_敊f곢た(_뭬9胡ぺ?5000:40000+_ci*15000)}
+          if(_プの97&&((_プの97.outerWidth-_プの97.innerWidth)>160||(_プの97.outerHeight-_プの97.innerHeight)>160)){
+            for(var _ci=0;_ci<2;_ci++){try{debugger}catch(e){}_ピ목b1(_ペ을か짩?5000:40000+_ci*15000)}
           }
 
           var _trap={};
-          try{Object.defineProperty(_trap,'toString',{get:function(){try{debugger}catch(e){}_敊f곢た(_뭬9胡ぺ?2000:20000);return ''}})}catch(e){}
-          if(_ゔ品偢2&&typeof _ゔ品偢2.log==='function'){try{_ゔ品偢2.log.call(_ゔ品偢2,_trap)}catch(e){}}
+          try{Object.defineProperty(_trap,'toString',{get:function(){try{debugger}catch(e){}_ピ목b1(_ペ을か짩?2000:20000);return ''}})}catch(e){}
+          if(_ぺチ쒪お&&typeof _ぺチ쒪お.log==='function'){try{_ぺチ쒪お.log.call(_ぺチ쒪お,_trap)}catch(e){}}
         }catch(e){}
       }
-      else if(_op===106){
+      else if(_op===228){
 
         try{
           var _err=new Error('x');
           var _stk=(_err&&_err.stack)?String(_err.stack):'';
           if(_stk){
             var _bad=/\b(devtools?|chrome-extension|debugger|inspector)\b/i;
-            if(_bad.test(_stk)){try{debugger}catch(e){}_敊f곢た(_뭬9胡ぺ?3000:25000)}
+            if(_bad.test(_stk)){try{debugger}catch(e){}_ピ목b1(_ペ을か짩?3000:25000)}
 
             var _depth=(_stk.match(/\n/g)||[]).length;
-            if(_depth>40){try{debugger}catch(e){}_敊f곢た(_뭬9胡ぺ?2000:15000)}
+            if(_depth>40){try{debugger}catch(e){}_ピ목b1(_ペ을か짩?2000:15000)}
           }
         }catch(e){}
       }
-      else if(_op===62){try{if(typeof setInterval!=='undefined')setInterval(_き8a7り7,_뭬9胡ぺ?4500:1500+(((-5018)+5035)%250))}catch(e){}}
-      else if(_op===65){var _fi=_쵠3e竴5ゥ[_嫭87た++];if(_も7f9タ[_fi])_碐c숇8(_も7f9タ[_fi]);}
-      else if(_op===16){for(var _hi=0;_hi<_も7f9タ.length;_hi++){if(_も7f9タ[_hi])_碐c숇8(_も7f9タ[_hi])}}
-      else if(_op===69){
-        var _u=_쵠3e竴5ゥ[_嫭87た++],_m=_쵠3e竴5ゥ[_嫭87た++],_c=_쵠3e竴5ゥ[_嫭87た++];
+      else if(_op===244){try{if(typeof setInterval!=='undefined')setInterval(_バcログ2あ,_ペ을か짩?4500:1500+(((14482)^14467)%250))}catch(e){}}
+      else if(_op===35){var _fi=_嬀78ebを[_쓹醄ぅゴ++];if(_緪골e낖튵[_fi])_ヂ릪攈켢(_緪골e낖튵[_fi]);}
+      else if(_op===163){for(var _hi=0;_hi<_緪골e낖튵.length;_hi++){if(_緪골e낖튵[_hi])_ヂ릪攈켢(_緪골e낖튵[_hi])}}
+      else if(_op===154){
+        var _u=_嬀78ebを[_쓹醄ぅゴ++],_m=_嬀78ebを[_쓹醄ぅゴ++],_c=_嬀78ebを[_쓹醄ぅゴ++];
         try{
-          if(_北6홰ミ&&typeof fetch!=='undefined'){
+          if(_プの97&&typeof fetch!=='undefined'){
             var _t0=Date.now();
-            fetch(_擐fbf70쑺c(_u),{mode:_擐fbf70쑺c(_m),cache:_擐fbf70쑺c(_c)}).then(function(){
+            fetch(_婗4fが0炬0ホ(_u),{mode:_婗4fが0炬0ホ(_m),cache:_婗4fが0炬0ホ(_c)}).then(function(){
               if(Date.now()-_t0>3000){try{debugger}catch(e){}}
             }).catch(function(){});
           }
         }catch(e){}
       }
-      else if(_op===207){
-        var _l=_쵠3e竴5ゥ[_嫭87た++],_h=_쵠3e竴5ゥ[_嫭87た++];
+      else if(_op===85){
+        var _l=_嬀78ebを[_쓹醄ぅゴ++],_h=_嬀78ebを[_쓹醄ぅゴ++];
         try{
           if(typeof XMLHttpRequest!=='undefined'&&!XMLHttpRequest.prototype.__jscool_wrapped){
 
             XMLHttpRequest.prototype.__jscool_wrapped=true;
             var _xo=XMLHttpRequest.prototype.open,_xs=XMLHttpRequest.prototype.send;
             XMLHttpRequest.prototype.open=function(){this.__jscool_ts=Date.now();return _xo.apply(this,arguments)};
-            XMLHttpRequest.prototype.send=function(){var _self=this;try{this.addEventListener(_擐fbf70쑺c(_l),function(){try{var _cert=_self.getResponseHeader&&_self.getResponseHeader(_擐fbf70쑺c(_h));if(_cert){try{debugger}catch(e){}}}catch(e){}})}catch(e){}return _xs.apply(this,arguments)};
+            XMLHttpRequest.prototype.send=function(){var _self=this;try{this.addEventListener(_婗4fが0炬0ホ(_l),function(){try{var _cert=_self.getResponseHeader&&_self.getResponseHeader(_婗4fが0炬0ホ(_h));if(_cert){try{debugger}catch(e){}}}catch(e){}})}catch(e){}return _xs.apply(this,arguments)};
           }
         }catch(e){}
       }
-      else if(_op===240){
+      else if(_op===234){
 
         try{
           if(typeof window!=='undefined'&&typeof document!=='undefined'){
@@ -364,82 +364,82 @@ function _擐fbf70쑺c(i){
             if(_cs&&!_cs.src&&typeof _cs.textContent==='string'){
               var _s=_cs.textContent,_h2=0;
               for(var _si=0;_si<_s.length;_si++)_h2=(Math.imul(31,_h2)+_s.charCodeAt(_si))|0;
-              if(_ミ懨俍f킃)_ミ懨俍f킃.fullHash=_h2;
-              _ゕょd1=_h2;
+              if(_ざや9쬗6)_ざや9쬗6.fullHash=_h2;
+              _か테4e=_h2;
             }
           }
         }catch(e){}
       }
-      else if(_op===219){
+      else if(_op===82){
 
         try{
           if(typeof window!=='undefined'&&typeof document!=='undefined'){
             var _cs2=document.currentScript;
             if(_cs2&&!_cs2.src&&typeof _cs2.textContent==='string'&&_cs2.textContent.length>=64){
-              if(_ゕょd1===0){try{debugger}catch(e){}_敊f곢た(_뭬9胡ぺ?4000:30000)}
+              if(_か테4e===0){try{debugger}catch(e){}_ピ목b1(_ペ을か짩?4000:30000)}
 
               var _t2=_cs2.textContent,_h3=0x811c9dc5;
               for(var _ti=0;_ti<_t2.length;_ti++)_h3=(Math.imul(_h3^_t2.charCodeAt(_ti),16777619))|0;
-              if(_h3===0||_h3===_ゕょd1){try{debugger}catch(e){}_敊f곢た(_뭬9胡ぺ?4000:30000)}
+              if(_h3===0||_h3===_か테4e){try{debugger}catch(e){}_ピ목b1(_ペ을か짩?4000:30000)}
             }
           }
         }catch(e){}
       }
-      else if(_op===91){
+      else if(_op===209){
         try{
           var _F=Function.prototype,_O=Object,_J=typeof JSON!=='undefined'?JSON:null;
-          _ミ懨俍f킃={
-            w:_北6홰ミ,
-            st:_北6홰ミ&&_北6홰ミ.setTimeout,ct:_北6홰ミ&&_北6홰ミ.clearTimeout,
-            si:_北6홰ミ&&_北6홰ミ.setInterval,ci:_北6홰ミ&&_北6홰ミ.clearInterval,
-            fe:_北6홰ミ&&_北6홰ミ.fetch,xh:_北6홰ミ&&_北6홰ミ.XMLHttpRequest,
+          _ざや9쬗6={
+            w:_プの97,
+            st:_プの97&&_プの97.setTimeout,ct:_プの97&&_プの97.clearTimeout,
+            si:_プの97&&_プの97.setInterval,ci:_プの97&&_プの97.clearInterval,
+            fe:_プの97&&_プの97.fetch,xh:_プの97&&_プの97.XMLHttpRequest,
             fp:_F.toString,fc:_F.call,fa:_F.apply,
             ok:_O.keys,od:_O.defineProperty,
             js:_J&&_J.stringify,jp:_J&&_J.parse,
             fullHash:0
           };
-        }catch(e){_ミ懨俍f킃={fullHash:0}}
+        }catch(e){_ざや9쬗6={fullHash:0}}
       }
-      else if(_op===169){
+      else if(_op===109){
         try{
-          var _check=function(fn){try{var _ts=_턭둭ィ敒ゅ?_턭둭ィ敒ゅ.call(fn):Function.prototype.toString.call(fn);return _ts.indexOf('[native code]')>=0}catch(e){return false}};
+          var _check=function(fn){try{var _ts=_쏋カ0ク麝?_쏋カ0ク麝.call(fn):Function.prototype.toString.call(fn);return _ts.indexOf('[native code]')>=0}catch(e){return false}};
           var _wrap=function(fn,ctx){return function(){if(_check(fn))return fn.apply(ctx||this,arguments);return fn.apply(ctx||this,arguments)}};
-          _擇톙カ7깖={
-            log:_ゔ品偢2&&_ゔ品偢2.log?_wrap(_ゔ品偢2.log,_ゔ品偢2):function(){},
-            warn:_ゔ品偢2&&_ゔ品偢2.warn?_wrap(_ゔ品偢2.warn,_ゔ品偢2):function(){},
-            error:_ゔ品偢2&&_ゔ品偢2.error?_wrap(_ゔ品偢2.error,_ゔ品偢2):function(){},
-            fetch:_北6홰ミ&&_北6홰ミ.fetch?_wrap(_北6홰ミ.fetch,_北6홰ミ):null,
-            xr:_北6홰ミ&&_北6홰ミ.XMLHttpRequest||null,
-            win:_北6홰ミ||null,
+          _덫bb훗솿={
+            log:_ぺチ쒪お&&_ぺチ쒪お.log?_wrap(_ぺチ쒪お.log,_ぺチ쒪お):function(){},
+            warn:_ぺチ쒪お&&_ぺチ쒪お.warn?_wrap(_ぺチ쒪お.warn,_ぺチ쒪お):function(){},
+            error:_ぺチ쒪お&&_ぺチ쒪お.error?_wrap(_ぺチ쒪お.error,_ぺチ쒪お):function(){},
+            fetch:_プの97&&_プの97.fetch?_wrap(_プの97.fetch,_プの97):null,
+            xr:_プの97&&_プの97.XMLHttpRequest||null,
+            win:_プの97||null,
             doc:typeof document!=='undefined'?document:null
           };
-        }catch(e){_擇톙カ7깖={}}
+        }catch(e){_덫bb훗솿={}}
       }
-      else if(_op===41){var _di=_쵠3e竴5ゥ[_嫭87た++];try{_ゕょd1=_擐fbf70쑺c(_di)}catch(e){_ゕょd1=null}}
-      else if(_op===68){var _cv=_쵠3e竴5ゥ[_嫭87た++];_觞샨3ぢ=(_ゕょd1===_cv)?1:0;}
-      else if(_op===241){var _off=_쵠3e竴5ゥ[_嫭87た++];_嫭87た+=_off|0;}
-      else if(_op===64){var _off2=_쵠3e竴5ゥ[_嫭87た++];if(_觞샨3ぢ)_嫭87た+=_off2|0;}
-      else if(_op===98){
-        var _gi=_쵠3e竴5ゥ[_嫭87た++];
+      else if(_op===43){var _di=_嬀78ebを[_쓹醄ぅゴ++];try{_か테4e=_婗4fが0炬0ホ(_di)}catch(e){_か테4e=null}}
+      else if(_op===57){var _cv=_嬀78ebを[_쓹醄ぅゴ++];_묽48ぴ=(_か테4e===_cv)?1:0;}
+      else if(_op===31){var _off=_嬀78ebを[_쓹醄ぅゴ++];_쓹醄ぅゴ+=_off|0;}
+      else if(_op===119){var _off2=_嬀78ebを[_쓹醄ぅゴ++];if(_묽48ぴ)_쓹醄ぅゴ+=_off2|0;}
+      else if(_op===225){
+        var _gi=_嬀78ebを[_쓹醄ぅゴ++];
         try{
-          if(_北6홰ミ){var _gk=_擐fbf70쑺c(_gi);_北6홰ミ[_gk]=_ゕょd1;}
+          if(_プの97){var _gk=_婗4fが0炬0ホ(_gi);_プの97[_gk]=_か테4e;}
         }catch(e){}
       }
-      else if(_op===72){break}
+      else if(_op===247){break}
 
-      if(_蔾45骥7ポポむ&&_蔾45骥7ポポむ.length>0&&(_嫭87た&7)===0){try{_擐fbf70쑺c((_嫭87た*2654435761)>>>0)}catch(e){}}
+      if(_뉃d76ゖヵイ2&&_뉃d76ゖヵイ2.length>0&&(_쓹醄ぅゴ&7)===0){try{_婗4fが0炬0ホ((_쓹醄ぅゴ*2654435761)>>>0)}catch(e){}}
     }
   };
-  try{_き8a7り7()}catch(e){}
+  try{_バcログ2あ()}catch(e){}
 })();
 
 
 (function(){
-  var _あc4b5=(504618759^939270023);
-  if(typeof _あc4b5!=='number'||(_あc4b5|0)!==(703578240|0)){
+  var _끈8즑岜캥=(516373894^-703734870);
+  if(typeof _끈8즑岜캥!=='number'||(_끈8즑岜캥|0)!==(-926226900|0)){
     try{debugger}catch(e){}
-    var _萳1宜bヴ=function(){var _ヨ68ォ=0;while((typeof undefined==='undefined')){_ヨ68ォ=(_ヨ68ォ+1)|0;try{debugger}catch(e){}}};
-    try{_萳1宜bヴ()}catch(e){}
+    var _む1릤e4=function(){var _ギラc7=0;while(((2099*(2099+1))%2===0)){_ギラc7=(_ギラc7+1)|0;try{debugger}catch(e){}}};
+    try{_む1릤e4()}catch(e){}
     return;
   }
   if(typeof window==='undefined'||typeof document==='undefined')return;
@@ -457,28 +457,31 @@ function _擐fbf70쑺c(i){
   }catch(e){}
 })();
 
-if(((7151)&-65)<((76990)+4858)){var _ばセうづ=null;}
-if(((6666*(6666+1))%2!==0)){var _篁0촤ウ=((16365)&-6786);throw new Error('68e250'+_篁0촤ウ)}
-var _醠駳렝b=((Math.random()*(27+0))|0)+((3191)-3171);void _醠駳렝b;
-var _ヌぎら즟합=(function(){function _ヌぎら즟합(){this._へゐ쟜f=((13882)-7614)}_ヌぎら즟합.prototype._篣c48=function(){return this._へゐ쟜f^((46)^8897)};return _ヌぎら즟합})();
-if(((11058|0)!==(11058|0))){var _ユ0韺ゔ=((9211)&-8257);throw new Error('6ba911'+_ユ0韺ゔ)}
-try{(typeof Promise!=='undefined')&&Promise.resolve(((5164)+2285)).then(function(_v){return _v})}catch(e){}
-void(((232273546)^8719)^((997375935)&-12323));
-if(((3448|0)!==(3448|0))){var _媈ソ52={a:((10459)&-10395),b:((4599)&-4567)};var _컓4るe=_媈ソ52.a+_媈ソ52.b;}
-var _ゕギヒ둵9=(function(){var _v=((6979)&-1);return{_퓟5f5:function(x){_v=(_v^x)|0},_蚔潓d1:function(){return _v}}})();
-var _瑢8鯸7ク=(function(){var _v=(3150+0);return{_皼ィb5:function(x){_v=(_v^x)|0},_焼a7ゆ:function(){return _v}}})();
-var _瓀ラヱ4=(Date.now()&((5188)^5248))|((701)-657);if(_瓀ラヱ4===-1){throw new Error('_'+_瓀ラヱ4)}
-var _ツボモ2=(Date.now()&((1496)-1388))|((76)^245);if(_ツボモ2===-1){throw new Error('_'+_ツボモ2)}
-var _롓ゆ3め=((Math.random()*(28+0))|0)+(7+0);void _롓ゆ3め;
-[(200+0),((1976)&-1953),((15475)-15444),((10483)&-10337)].reverse();
-var _렇b컎7=(Date.now()&(23+0))|(188+0);if(_렇b컎7===-1){throw new Error('_'+_렇b컎7)}
-var _く793=((Math.random()*((4725)^4666))|0)+((9031)^9032);void _く793;
-var _ゔ3쒀ぬメ=(function(){var _v=((21384)-12759);return{_ヺ珃6ふ:function(x){_v=(_v^x)|0},_狇マ빊c:function(){return _v}}})();
-var _カcf3=Math.floor(Math.random()*((65955)+5472));
-(function(){try{throw new Error('d0c98beb')}catch(e){}})();
-void(/9555/.test('c7b00510'));
-var _ヴ水3ぁ=(function(){return Array((8+0)).join('d49a')})();
-function _ァ竖ルb1쪾5(name){const _욭06f虯a9=_擐fbf70쑺c(-7200+7200)+name+_擐fbf70쑺c(1+0);console[_擐fbf70쑺c(2+0)](_욭06f虯a9);return _욭06f虯a9}if((10150|0)!==(10150|0)){var _か邷6お={a:12142^12129,b:457^389};var _쬮ぢ讫즩=_か邷6お.a+_か邷6お.b}try{Object.freeze({a:7+0})}catch(e){}var _쳧9づf=Date.now()&(16360^16278)|12052-11871;if(_쳧9づf===-1){throw new Error("_"+_쳧9づf)}void /740c/.test("f1afe971");if(403+0<104150-14940){var _닼0d7=null}if((14661|0)!==(14661|0)){var _셩385=8153+0;throw new Error("ad9688"+_셩385)}[-11535+11556,12350&-12307,11255^11013,774-529].reverse();_ァ竖ルb1쪾5(_擐fbf70쑺c(10967&-10965));(function(){try{throw new Error("001f8cda")}catch(e){}})();(function(){try{throw new Error("9bb8bb04")}catch(e){}})();(function(){try{throw new Error("91572ba8")}catch(e){}})();try{Object.freeze({a:9763^9734})}catch(e){}var _ば8ゼ8=function(){return Array(17+0).join("a8bf")}();if((3806^11127)<(28159&-13)){var _짙뚀0f=null}if(5907*(5907+1)%2!==0){var _퍻び퉡ホ={a:-9020+9061,b:-14983+15025};var _ぅ6a첂=_퍻び퉡ホ.a+_퍻び퉡ホ.b}if(14820-8303<(48763&-4097)){var _ばa8촍=null}[9143-9062,15327&-15117,9578^9529,-5163+5278,13099^13227].reverse();[15734^15719,-8391+8526,157+0,10045&-10026,56+0,10849-10699,-10165+10335,14827&-14626].reverse();var _で륒9ヂ=Math.floor(Math.random()*(16367&-9223));var _졂b3f=(Math.random()*(9625^9682)|0)+(13840^13873);void _졂b3f;try{Object.freeze({a:229+0})}catch(e){}void(122480328-8451^(518154089^15700));try{Object.freeze({a:5097&-4649})}catch(e){}var _퇈ャ6ギ4=function(){function _퇈ャ6ギ4(){this._ヸゅノ7=6120+0}_퇈ャ6ギ4.prototype._怤じ9ポ=function(){return this._ヸゅノ7^16383&-8761};return _퇈ャ6ギ4}();(function(){try{throw new Error("fa43e6dd")}catch(e){}})();try{Object.freeze({a:575+0})}catch(e){}if(18842-10858<39631+13323){var _ゑさa3=null}var _ど鸼ヅ8=Math.floor(Math.random()*(96069^12564));void(393162256-439^(358775607^14788));(function(){try{throw new Error("99ff5a28")}catch(e){}})();if((14670|0)!==(14670|0)){var _ゕゥdェ={a:61+0,b:2252^2260};var _봝a蘝8=_ゕゥdェ.a+_ゕゥdェ.b}
+var _獊のde0=(function(){function _獊のde0(){this._킁嗰63=(7723+0)}_獊のde0.prototype._サa2ぼ=function(){return this._킁嗰63^((14102)-12236)};return _獊のde0})();
+var _ヂ78ぬ=(function(){return Array(((-9328)+9335)).join('ce3e')})();
+if(((9476)-1873)<((15255)+1509)){var _悓を襊뿺=null;}
+try{Object.freeze({a:((10467)^11158)})}catch(e){}
+var _豷ヸグ7=((Math.random()*((1244)&-1169))|0)+((711)&-707);void _豷ヸグ7;
+[((5403)&-5385),((8553)&-8514),((-1248)+1438),((10174)&-10033)].reverse();
+var _ヮ덈3ぜ=(function(){return Array(((14845)&-14833)).join('4c4b')})();
+var _ヺd8懥蛥=(function(){function _ヺd8懥蛥(){this._ヴへaぱ=((13539)^8327)}_ヺd8懥蛥.prototype._볾ょ傌5=function(){return this._ヴへaぱ^(2688+0)};return _ヺd8懥蛥})();
+var _あ残0カ=((Math.random()*((5784)^5809))|0)+((15230)&-15181);void _あ残0カ;
+var _텴ヘe뷔=(function(){return Array(((7236)^7240)).join('6b80')})();
+try{Object.freeze({a:((12269)&-11650)})}catch(e){}
+var _탚5ゎ9=(function(){return Array((7+0)).join('eb0e')})();
+var _콄鰂bェ8=(function(){function _콄鰂bェ8(){this._뇳쪒깠く=((593)^10080)}_콄鰂bェ8.prototype._콑e20=function(){return this._뇳쪒깠く^((5487)-867)};return _콄鰂bェ8})();
+void(/e63f/.test('12be96ef'));
+var _葐ヮぉ3=(function(){return Array((18+0)).join('6238')})();
+if((typeof undefined!=='undefined')){var _りがゑペ=((1648)^9134);throw new Error('160b45'+_りがゑペ)}
+if(((12859*(12859+1))%2!==0)){var _ゎ릚9祊={a:((4401)&-4353),b:((15070)&-14983)};var _えセ搳1=_ゎ릚9祊.a+_ゎ릚9祊.b;}
+(function(){try{throw new Error('2495a27a')}catch(e){}})();
+var _イヰづ7e=(function(){function _イヰづ7e(){this._钉2ぽュ=((11247)&-8545)}_イヰづ7e.prototype._푡fズゕ=function(){return this._钉2ぽュ^((1008)^7713)};return _イヰづ7e})();
+try{(typeof Promise!=='undefined')&&Promise.resolve((5746+0)).then(function(_v){return _v})}catch(e){}
+var _ゔ쏪4쉹=((Math.random()*((12403)-12349))|0)+((8093)&-8082);void _ゔ쏪4쉹;
+if((typeof undefined!=='undefined')){var _て젆セb=((10239)&-8450);throw new Error('a664f5'+_て젆セb)}
+if(((8092*(8092+1))%2!==0)){var _洞8ぱ囘={a:(69+0),b:((524)^599)};var _ニ嬈獊a=_洞8ぱ囘.a+_洞8ぱ囘.b;}
+void(((844463543)&-2354)^((806959966)-15771));
+void(704036385-15450^586646322-2251);try{typeof Promise!=="undefined"&&Promise.resolve(3478+0).then(function(_v){return _v})}catch(e){}if((2891|0)!==(2891|0)){var _쒖旛d5=15999&-10787;throw new Error("10fd0c"+_쒖旛d5)}if(typeof undefined!=="undefined"){var _谄7bf={a:50+0,b:88+0};var _縱も椲a=_谄7bf.a+_谄7bf.b}void(595226321+0^982838811+4166);var _灍fみc=(Math.random()*(-13885+13961)|0)+(29+0);void _灍fみc;var _쏔サ됥큋=function(){return Array(2253&-2245).join("9f55")}();function _쑓8beゕヷf(name){const _ぶ횧0ぴぺ搒힣=_婗4fが0炬0ホ(8793&-8794)+name+_婗4fが0炬0ホ(7803&-7803);console[_婗4fが0炬0ホ(13399-13397)](_ぶ횧0ぴぺ搒힣);return _ぶ횧0ぴぺ搒힣}_쑓8beゕヷf(_婗4fが0炬0ホ(3542^3541));var _モ0f2た=function(){function _モ0f2た(){this._攸ト1く=17153-15900}_モ0f2た.prototype._헙刹eが=function(){return this._攸ト1く^14968-9145};return _モ0f2た}();var _ゐaf웏1=function(){function _ゐaf웏1(){this._ゅc3d=19145-12480}_ゐaf웏1.prototype._茁뉄fツ=function(){return this._ゅc3d^14103&-13330};return _ゐaf웏1}();void /58f5/.test("1d5c80f6");var _レ2冊1サ=function(){function _レ2冊1サ(){this._もd7て=-4497+11066}_レ2冊1サ.prototype._퐡ばき툓=function(){return this._もd7て^12283&-8201};return _レ2冊1サ}();var _킁槍8ヰ=Math.floor(Math.random()*(79359&-464));void(781368041-12726^(760321267^5407));(function(){try{throw new Error("03ef3fd6")}catch(e){}})();var _ろ渤5뀍퍝=function(){var _v=6079&-154;return{_ねadb:function(x){_v=_v^x|0},_ぁ1グ9:function(){return _v}}}();
 })();
 ```
 **JScool — Keep your code safe.**
